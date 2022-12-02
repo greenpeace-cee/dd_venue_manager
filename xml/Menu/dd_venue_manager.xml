@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/dd-venue-manager/create-case-activity-civi-office-document</path>
+    <page_callback>CRM_DdVenueManager_Form_CreateCaseActivityCiviOfficeDocument</page_callback>
+    <title>CreateCaseActivityCiviOfficeDocument</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>

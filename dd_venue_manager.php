@@ -79,6 +79,19 @@ function dd_venue_manager_civicrm_entityTypes(&$entityTypes): void {
   _dd_venue_manager_civix_civicrm_entityTypes($entityTypes);
 }
 
+function dd_venue_manager_civicrm_links($operation, $objectName, $objectId, &$links, &$mask, &$values) {
+  if ($operation === 'case.tab.row' && $objectName === 'Activity') {
+    $links[] = [
+      'class' => 'no-popup',
+      'extra' => 'target="_blank"',
+      'name' => 'Create Documents (CiviOffice)',
+      'url' => 'civicrm/dd-venue-manager/create-case-activity-civi-office-document',
+      'qs' => 'activity_id=' . $objectId,
+      'title' => 'Create Documents (CiviOffice)',
+    ];
+  }
+}
+
 // --- Functions below this ship commented out. Uncomment as required. ---
 
 /**
