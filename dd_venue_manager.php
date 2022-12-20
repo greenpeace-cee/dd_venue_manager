@@ -79,30 +79,155 @@ function dd_venue_manager_civicrm_entityTypes(&$entityTypes): void {
   _dd_venue_manager_civix_civicrm_entityTypes($entityTypes);
 }
 
-// --- Functions below this ship commented out. Uncomment as required. ---
+/**
+ * Register Manage Venue permission
+ *
+ * @param $permissions
+ * @return void
+ */
+function dd_venue_manager_civicrm_permission(&$permissions) {
+  $permissions['manage venue'] = [
+    E::ts('Manage Venue'),
+    E::ts('Grants the necessary permissions for venues managing'),
+  ];
+}
 
 /**
- * Implements hook_civicrm_preProcess().
+ * Amend Navigation Menu
  *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_preProcess
+ * @param $params
+ * @return void
  */
-//function dd_venue_manager_civicrm_preProcess($formName, &$form): void {
-//
-//}
+function dd_venue_manager_civicrm_navigationMenu(&$params) {
+
+  if (CRM_Core_Permission::check('manage venue')) {
+    if (CRM_Core_Permission::check('administer CiviCRM')) {
+      // get the maximum key of $params
+      // in order to add it into the existing menu
+      $navID = (int) _get_navigation_menu_key_max($params) + 1;
+    } else {
+      // reset menu -> just venues menu nav should be shown
+      $navID = 0;
+      $params = [];
+    }
+
+    $params[$navID] = _add_venue_manager_navigation_menu($navID);
+  }
+}
 
 /**
- * Implements hook_civicrm_navigationMenu().
+ * New navigation menu (venues)
  *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_navigationMenu
+ * @param $navID
+ * @return array
  */
-//function dd_venue_manager_civicrm_navigationMenu(&$menu): void {
-//  _dd_venue_manager_civix_insert_navigation_menu($menu, 'Mailings', [
-//    'label' => E::ts('New subliminal message'),
-//    'name' => 'mailing_subliminal_message',
-//    'url' => 'civicrm/mailing/subliminal',
-//    'permission' => 'access CiviMail',
-//    'operator' => 'OR',
-//    'separator' => 0,
-//  ]);
-//  _dd_venue_manager_civix_navigationMenu($menu);
-//}
+function _add_venue_manager_navigation_menu($navID) {
+  return array(
+    'attributes' => array(
+      'label'      => E::ts('Venues'),
+      'name'       => 'Venues',
+      'url'        => null,
+      'permission' => null,
+      'operator'   => null,
+      'separator'  => null,
+      'parentID'   => null,
+      'navID'      => $navID,
+      'active'     => 1,
+      'icon'       => 'crm-i fa-building-o',
+    ),
+    'child' => array(
+      1 => array(
+        'attributes' => array(
+          'label'      => E::ts('Search Venues'),
+          'name'       => 'Search Venues',
+          'url'        => 'civicrm/venue-search',
+          'permission' => 'manage venue',
+          'operator'   => null,
+          'separator'  => null,
+          'parentID'   => $navID,
+          'navID'      => 1,
+          'active'     => 1,
+          'icon'       => 'crm-i fa-search'
+        ),
+        'child' => null,
+      ),
+      2 => array(
+        'attributes' => array(
+          'label'      => E::ts('Venue Search Last Contacted'),
+          'name'       => 'Venue Search Last Contacted',
+          'url'        => 'civicrm/venue-search-last-contacted-test',
+          'permission' => 'manage venue',
+          'operator'   => null,
+          'separator'  => 1,
+          'parentID'   => $navID,
+          'navID'      => 2,
+          'active'     => 1,
+          'icon'       => 'crm-i fa-search'
+        ),
+        'child' => null,
+      ),
+      3 => array(
+        'attributes' => array(
+          'label'      => E::ts('New Venue'),
+          'name'       => 'New Venue',
+          'url'        => 'civicrm/contact/add?ct=Organization&cst=Venue&reset=1',
+          'permission' => 'manage venue',
+          'operator'   => null,
+          'separator'  => null,
+          'parentID'   => $navID,
+          'navID'      => 3,
+          'active'     => 1,
+          'icon'       => 'crm-i fa-plus-square-o'
+        ),
+        'child' => null,
+      ),
+      4 => array(
+        'attributes' => array(
+          'label'      => E::ts('New Venue Contact Person'),
+          'name'       => 'New Venue Contact Person',
+          'url'        => 'civicrm/contact/add?ct=Individual&cst=Venue_Contact_Person&reset=1',
+          'permission' => 'manage venue',
+          'operator'   => null,
+          'separator'  => 1,
+          'parentID'   => $navID,
+          'navID'      => 4,
+          'active'     => 1,
+          'icon'       => 'crm-i fa-user-plus'
+        ),
+        'child' => null,
+      ),
+      5 => array(
+        'attributes' => array(
+          'label'      => E::ts('ToDo'),
+          'name'       => 'ToDo',
+          'url'        => 'civicrm/venue-todo',
+          'permission' => 'manage venue',
+          'operator'   => null,
+          'separator'  => null,
+          'parentID'   => $navID,
+          'navID'      => 5,
+          'active'     => 1,
+          'icon'       => 'crm-i fa-check-square-o'
+        ),
+        'child' => null,
+      ),
+    ),
+  );
+}
+
+/**
+ * Get Navigation Menu Max Key
+ *
+ * @param $menuArray
+ * @return mixed
+ */
+function _get_navigation_menu_key_max($menuArray) {
+  $max = array(max(array_keys($menuArray)));
+  foreach($menuArray as $v) {
+    if (!empty($v['child'])) {
+      $max[] = _get_navigation_menu_key_max($v['child']);
+    }
+  }
+  return max($max);
+}
+
