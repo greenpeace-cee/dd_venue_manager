@@ -1,0 +1,82 @@
+<?php
+use CRM_Grant_ExtensionUtil as E;
+
+return [
+  [
+    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition',
+    'entity' => 'OptionGroup',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
+        'title' => 'Venue Officer Contact Person Detail :: DDC Disposition',
+        'description' => NULL,
+        'data_type' => 'Int',
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'is_locked' => FALSE,
+        'option_value_fields' => [
+          'name',
+          'label',
+          'description',
+        ],
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition_OptionValue_pro_DDC',
+    'entity' => 'OptionValue',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
+        'label' => 'pro DDC',
+        'value' => '1',
+        'name' => 'pro_DDC',
+        'grouping' => NULL,
+        'filter' => 0,
+        'is_default' => FALSE,
+        'description' => NULL,
+        'is_optgroup' => FALSE,
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'component_id' => NULL,
+        'domain_id' => NULL,
+        'visibility_id' => NULL,
+        'icon' => NULL,
+        'color' => NULL,
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition_OptionValue_DDC_critical',
+    'entity' => 'OptionValue',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
+        'label' => 'DDC critical',
+        'value' => '2',
+        'name' => 'DDC_critical',
+        'grouping' => NULL,
+        'filter' => 0,
+        'is_default' => FALSE,
+        'description' => NULL,
+        'is_optgroup' => FALSE,
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'component_id' => NULL,
+        'domain_id' => NULL,
+        'visibility_id' => NULL,
+        'icon' => NULL,
+        'color' => NULL,
+      ],
+    ],
+  ],
+];
