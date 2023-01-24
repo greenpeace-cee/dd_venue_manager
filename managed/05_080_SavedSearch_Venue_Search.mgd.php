@@ -1,5 +1,5 @@
 <?php
-use CRM_Grant_ExtensionUtil as E;
+use CRM_DdVenueManager_ExtensionUtil as E;
 
 return [
   [

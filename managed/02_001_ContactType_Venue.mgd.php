@@ -1,21 +1,21 @@
 <?php
-use CRM_Grant_ExtensionUtil as E;
+use CRM_DdVenueManager_ExtensionUtil as E;
 
 return [
   [
-    'name' => 'ContactType_Venue_Contact_Person',
+    'name' => 'ContactType_Venue',
     'entity' => 'ContactType',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'name' => 'Venue_Contact_Person',
-        'label' => 'Venue Contact Person',
+        'name' => 'Venue',
+        'label' => 'Venue',
         'description' => NULL,
         'image_URL' => NULL,
         'icon' => NULL,
-        'parent_id.name' => 'Individual',
+        'parent_id.name' => 'Organization',
         'is_active' => TRUE,
         'is_reserved' => FALSE,
       ],

@@ -17,6 +17,82 @@ function dd_venue_manager_civicrm_config(&$config): void {
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Implements hook_civicrm_install().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_install
+ */
+function dd_venue_manager_civicrm_install(): void {
+  // creating CaseType is a PITA:
+  // - hook_civicrm_caseType() fires too late relative to *.mgd.php collection
+  // - creation via *.mgd.php is not yet supported (infinite loop, yay!)
+  // - setting definition to the raw case XML causes HTMLInputCoder to
+  //   do its thing and mess up the XML
+  // so what we do is create the CaseType here and set definition to an array
+  // based on the XML
+  $xml = simplexml_load_file(__DIR__ . '/xml/Cooperation.xml', 'SimpleXMLElement', LIBXML_NOCDATA);
+  $json = json_encode($xml);
+  $definition = json_decode($json, TRUE);
+  \Civi\Api4\CaseType::save(FALSE)
+    ->addRecord([
+      'name' => 'Cooperation',
+      'title' => 'Cooperation',
+      'definition' => $definition,
+    ])
+    ->setMatch([
+      'name',
+    ])
+    ->execute();
+  _dd_venue_manager_civix_civicrm_install();
+}
+
+/**
+ * Implements hook_civicrm_postInstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postInstall
+ */
+function dd_venue_manager_civicrm_postInstall(): void {
+  _dd_venue_manager_civix_civicrm_postInstall();
+}
+
+/**
+ * Implements hook_civicrm_uninstall().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_uninstall
+ */
+function dd_venue_manager_civicrm_uninstall(): void {
+  _dd_venue_manager_civix_civicrm_uninstall();
+}
+
+/**
+ * Implements hook_civicrm_enable().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_enable
+ */
+function dd_venue_manager_civicrm_enable(): void {
+  _dd_venue_manager_civix_civicrm_enable();
+}
+
+/**
+ * Implements hook_civicrm_disable().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_disable
+ */
+function dd_venue_manager_civicrm_disable(): void {
+  _dd_venue_manager_civix_civicrm_disable();
+}
+
+/**
+ * Implements hook_civicrm_upgrade().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_upgrade
+ */
+function dd_venue_manager_civicrm_upgrade($op, CRM_Queue_Queue $queue = NULL) {
+  return _dd_venue_manager_civix_civicrm_upgrade($op, $queue);
+}
+
+/**
  * Implements hook_civicrm_entityTypes().
  *
  * Declare entity types provided by this module.
