@@ -4,6 +4,12 @@
     <path>civicrm/dd-venue-manager/create-case-activity-civi-office-document</path>
     <page_callback>CRM_DdVenueManager_Form_CreateCaseActivityCiviOfficeDocument</page_callback>
     <title>CreateCaseActivityCiviOfficeDocument</title>
-    <access_arguments>access CiviCRM</access_arguments>
+    <access_arguments>administer CiviCRM</access_arguments>
+  </item>
+  <item>
+    <path>civicrm/dd-venue-manager/venue-contact-person-relationship</path>
+    <page_callback>CRM_DdVenueManager_Form_VenueContactPersonRelationship</page_callback>
+    <title>Venue person relation</title>
+    <access_arguments>administer CiviCRM</access_arguments>
   </item>
 </menu>
