@@ -18,20 +18,14 @@
   <version>1.0-alpha.1</version>
   <develStage>alpha</develStage>
   <compatibility>
-    <ver>5.51</ver>
+    <ver>5.39</ver>
   </compatibility>
   <comments></comments>
   <classloader>
-    <psr0 prefix="CRM_" path="."/>
     <psr4 prefix="Civi\" path="Civi"/>
   </classloader>
   <civix>
     <namespace>CRM/DdVenueManager</namespace>
-    <format>22.10.0</format>
     <angularModule>crmDdVenueManager</angularModule>
   </civix>
-  <mixins>
-    <mixin>mgd-php@1.0.0</mixin>
-    <mixin>setting-php@1.0.0</mixin>
-  </mixins>
 </extension>
