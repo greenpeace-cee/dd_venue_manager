@@ -34,6 +34,12 @@ class CRM_DdVenueManager_Form_CreateCaseActivityCiviOfficeDocument extends CRM_C
     }
   }
 
+  public function setDefaultValues() {
+    $defaults = parent::setDefaultValues();
+    $defaults['document_uri'] = Civi::settings()->get('dd_venue_default_venue_overview_document');
+    return $defaults;
+  }
+
   public function buildQuickForm() {
     $this->setTitle(E::ts('Generate Case Activity CiviOffice Document'));
     $documentRendererOptions = CiviOffice::getDocumentRendererOptions();
