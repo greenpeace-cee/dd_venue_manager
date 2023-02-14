@@ -1,6 +1,6 @@
 <div class="dd-venue-manager__venue-relations">
   <div class="crm-accordion-wrapper">
-    <div class="crm-accordion-header">Venue relations contact persons [{$relations|@count}]</div>
+    <div class="crm-accordion-header">Contact Persons [{$relations|@count}]</div>
     <div class="crm-accordion-body">
 
       <div class="crm-submit-buttons dd-venue-manager__venue-relations-add-new">
@@ -8,7 +8,7 @@
            href="{crmURL p='civicrm/dd-venue-manager/venue-contact-person-relationship' q="reset=1&id=`$relation.relationship_id`&cid=`$caseClientId`&caseID=`$caseId`&action=add"}"
         >
           <span class="crm-i fa-pencil"></span>
-          <span>Add new Relations</span>
+          <span>Add Contact Person</span>
         </a>
       </div>
 
@@ -23,7 +23,7 @@
               <th>Position</th>
               <th>Decision Maker?</th>
               <th>DDC Disposition</th>
-              <th>On-Site Contact Person?</th>
+              <th>On-Site Contact</th>
               <th>Actions</th>
             </tr>
               {foreach from=$relations item=relation}

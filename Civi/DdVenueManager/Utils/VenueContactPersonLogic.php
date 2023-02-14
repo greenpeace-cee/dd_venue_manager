@@ -30,12 +30,12 @@ class VenueContactPersonLogic {
       ->addSelect('Venue_Contact_Person_Details.Decision_Maker')
       ->addSelect('Venue_Contact_Person_Details.DDC_Disposition')
       ->addSelect('Venue_Contact_Person_Details.DDC_Disposition:label')
-      ->addSelect('Venue_Contact_Person_Details.On_Site_Contact')
+      ->addSelect('Venue_Contact_Person_Details.On_Site_Contact:label')
       ->addWhere('relationship_type_id:name', '=', 'venue contact person')
       ->addWhere('case_id', '=', $caseId)
-      ->addJoin('Contact AS contact', 'INNER', ['contact_id_b', '=', 'contact.id'])
-      ->addJoin('Email AS email', 'LEFT', ['contact_id_b', '=', 'email.contact_id'], ['email.is_primary', '=', 1])
-      ->addJoin('Phone AS phone', 'LEFT', ['contact_id_b', '=', 'phone.contact_id'], ['phone.is_primary', '=', 1])
+      ->addJoin('Contact AS contact', 'INNER', ['contact_id_a', '=', 'contact.id'])
+      ->addJoin('Email AS email', 'LEFT', ['contact_id_a', '=', 'email.contact_id'], ['email.is_primary', '=', 1])
+      ->addJoin('Phone AS phone', 'LEFT', ['contact_id_a', '=', 'phone.contact_id'], ['phone.is_primary', '=', 1])
       ->execute();
 
     foreach ($relationships as $relationship) {
@@ -48,10 +48,9 @@ class VenueContactPersonLogic {
         'venue_contact_position' => $relationship['Venue_Contact_Person_Details.Position'],
         'venue_contact_primary' => $relationship['Venue_Contact_Person_Details.Primary'],
         'venue_contact_ddc_disposition' => $relationship['Venue_Contact_Person_Details.DDC_Disposition'],
-        'venue_contact_on_site_contact' => $relationship['Venue_Contact_Person_Details.On_Site_Contact'],
         'venue_contact_decision_maker' => $relationship['Venue_Contact_Person_Details.Decision_Maker'],
         'venue_contact_decision_maker_label' => self::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Decision_Maker']),
-        'venue_contact_on_site_contact_label' => self::makeBooleanLabel($relationship['Venue_Contact_Person_Details.On_Site_Contact']),
+        'venue_contact_on_site_contact_label' => $relationship['Venue_Contact_Person_Details.On_Site_Contact:label'],
         'venue_contact_primary_label' => self::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Primary']),
         'venue_contact_ddc_disposition_label' => $relationship['Venue_Contact_Person_Details.DDC_Disposition:label'],
       ];
