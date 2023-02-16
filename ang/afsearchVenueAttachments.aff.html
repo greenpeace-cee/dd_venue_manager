@@ -1,0 +1,12 @@
+<div af-fieldset="">
+  <div class="af-markup">
+    <div class="form-inline"><a class="btn btn-primary" ng-href="{{ crmUrl('civicrm/contact/view/cd/edit?reset=1&amp;type=Organization&amp;groupID=17&amp;multiRecordDisplay=single&amp;mode=add', {entityID: options.contact_id, reset: 1, cgcount: 99999}) }}" target="crm-popup"> <i class="crm-i fa-plus-circle"> </i> Add Attachment</a></div>
+
+  </div>
+  <div class="af-container af-layout-cols">
+    <af-field name="Attachment_Type" defn="{input_attrs: {multiple: true}, label: 'Attachment Type'}" />
+    <af-field name="Shared" defn="{input_type: 'Select', input_attrs: {multiple: true}, label: 'Shared?'}" />
+    <af-field name="Archived" defn="{input_type: 'Select', input_attrs: {multiple: true}, afform_default: '0', label: 'Archived?'}" />
+  </div>
+  <crm-search-display-table search-name="Venue_Attachments" display-name="Venue_Attachments_Table_1" filters="{'Custom_Venue_Attachment_Contact_entity_id_01.id': options.contact_id}"></crm-search-display-table>
+</div>

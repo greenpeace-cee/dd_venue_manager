@@ -3,15 +3,15 @@ use CRM_DdVenueManager_ExtensionUtil as E;
 
 return [
   [
-    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition',
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact',
     'entity' => 'OptionGroup',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
-        'title' => 'Venue Officer Contact Person Detail :: DDC Disposition',
+        'name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'title' => 'Venue Contact Person Details :: On-Site Contact',
         'description' => NULL,
         'data_type' => 'Int',
         'is_reserved' => FALSE,
@@ -26,17 +26,17 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition_OptionValue_pro_DDC',
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact_OptionValue_1st',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
-        'label' => 'pro DDC',
+        'option_group_id.name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'label' => '1st',
         'value' => '1',
-        'name' => 'pro_DDC',
+        'name' => '1st',
         'grouping' => NULL,
         'filter' => 0,
         'is_default' => FALSE,
@@ -53,17 +53,17 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Venue_Officer_Contact_Person_Detail_DDC_Disposition_OptionValue_DDC_critical',
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact_OptionValue_2nd',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Venue_Officer_Contact_Person_Detail_DDC_Disposition',
-        'label' => 'DDC critical',
+        'option_group_id.name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'label' => '2nd',
         'value' => '2',
-        'name' => 'DDC_critical',
+        'name' => '2nd',
         'grouping' => NULL,
         'filter' => 0,
         'is_default' => FALSE,

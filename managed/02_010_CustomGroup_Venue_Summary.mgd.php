@@ -1,5 +1,6 @@
 <?php
 use CRM_DdVenueManager_ExtensionUtil as E;
+
 return [
   [
     'name' => 'CustomGroup_Venue_Summary',
@@ -153,7 +154,7 @@ return [
     ],
   ],
   [
-    'name' => 'CustomGroup_Venue_Summary_CustomField_Billing_Modality',
+    'name' => 'CustomGroup_Venue_Summary_CustomField_Billing_and_Request_Modality',
     'entity' => 'CustomField',
     'cleanup' => 'never',
     'update' => 'always',
@@ -162,7 +163,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Venue_Summary',
         'name' => 'Billing_Modality',
-        'label' => 'Billing Modality',
+        'label' => 'Billing and Request Modality',
         'data_type' => 'Memo',
         'html_type' => 'TextArea',
         'default_value' => NULL,
@@ -184,7 +185,7 @@ return [
         'time_format' => NULL,
         'note_columns' => 60,
         'note_rows' => 3,
-        'column_name' => 'billing_modality',
+        'column_name' => 'billing_and_request_modality',
         'option_group_id' => NULL,
         'serialize' => 0,
         'filter' => NULL,
