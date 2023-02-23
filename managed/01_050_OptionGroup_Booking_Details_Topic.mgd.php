@@ -62,7 +62,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Ökokonsum',
-        'value' => '1',
+        'value' => '2',
         'name' => 'Ökokonsum',
         'grouping' => NULL,
         'filter' => 0,
@@ -89,7 +89,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Landwirtschaft',
-        'value' => '1',
+        'value' => '3',
         'name' => 'Landwirtschaft',
         'grouping' => NULL,
         'filter' => 0,
@@ -116,7 +116,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Meeresschutz',
-        'value' => '1',
+        'value' => '4',
         'name' => 'Meeresschutz',
         'grouping' => NULL,
         'filter' => 0,
@@ -143,7 +143,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Umweltgifte',
-        'value' => '1',
+        'value' => '5',
         'name' => 'Umweltgifte',
         'grouping' => NULL,
         'filter' => 0,
@@ -170,7 +170,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Wälder',
-        'value' => '1',
+        'value' => '6',
         'name' => 'Wälder',
         'grouping' => NULL,
         'filter' => 0,
@@ -197,7 +197,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Demokratie',
-        'value' => '1',
+        'value' => '7',
         'name' => 'Demokratie',
         'grouping' => NULL,
         'filter' => 0,
@@ -224,7 +224,7 @@ return [
       'values' => [
         'option_group_id.name' => 'Booking_Details_Topic',
         'label' => 'Biodiversität',
-        'value' => '1',
+        'value' => '8',
         'name' => 'Biodiversität',
         'grouping' => NULL,
         'filter' => 0,
