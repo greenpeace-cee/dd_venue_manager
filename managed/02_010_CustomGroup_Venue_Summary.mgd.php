@@ -162,7 +162,7 @@ return [
       'version' => 4,
       'values' => [
         'custom_group_id.name' => 'Venue_Summary',
-        'name' => 'Billing_Modality',
+        'name' => 'Billing_and_Request_Modality',
         'label' => 'Billing and Request Modality',
         'data_type' => 'Memo',
         'html_type' => 'TextArea',

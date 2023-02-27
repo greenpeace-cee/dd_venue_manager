@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Venue_Attachments',
     'entity' => 'SavedSearch',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'never',
     'params' => [
       'version' => 4,
       'values' => [
@@ -53,7 +53,7 @@ return [
     'name' => 'SavedSearch_Venue_Attachments_SearchDisplay_Venue_Attachments_Table_1',
     'entity' => 'SearchDisplay',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'never',
     'params' => [
       'version' => 4,
       'values' => [

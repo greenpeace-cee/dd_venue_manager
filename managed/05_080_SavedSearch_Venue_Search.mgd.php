@@ -6,7 +6,7 @@ return [
     'name' => 'SavedSearch_Venue_Search',
     'entity' => 'SavedSearch',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'never',
     'params' => [
       'version' => 4,
       'values' => [
@@ -56,11 +56,6 @@ return [
                 'id',
                 '=',
                 'Contact_CaseContact_Case_01.contact_id',
-              ],
-              [
-                'Contact_CaseContact_Case_01.case_type_id:name',
-                '=',
-                '"cooperation"',
               ],
             ],
             [
@@ -126,7 +121,7 @@ return [
                   'Phone Call',
                   'Personal Email',
                   'Meeting',
-                  'Booking Request',
+                  'Request',
                 ],
               ],
             ],
@@ -142,7 +137,7 @@ return [
     'name' => 'SavedSearch_Venue_Search_SearchDisplay_Venue_Search_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'never',
     'params' => [
       'version' => 4,
       'values' => [
