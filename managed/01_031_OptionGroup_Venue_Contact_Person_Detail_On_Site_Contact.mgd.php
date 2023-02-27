@@ -1,0 +1,82 @@
+<?php
+use CRM_DdVenueManager_ExtensionUtil as E;
+
+return [
+  [
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact',
+    'entity' => 'OptionGroup',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'title' => 'Venue Contact Person Details :: On-Site Contact',
+        'description' => NULL,
+        'data_type' => 'Int',
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'is_locked' => FALSE,
+        'option_value_fields' => [
+          'name',
+          'label',
+          'description',
+        ],
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact_OptionValue_1st',
+    'entity' => 'OptionValue',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'label' => '1st',
+        'value' => '1',
+        'name' => '1st',
+        'grouping' => NULL,
+        'filter' => 0,
+        'is_default' => FALSE,
+        'description' => NULL,
+        'is_optgroup' => FALSE,
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'component_id' => NULL,
+        'domain_id' => NULL,
+        'visibility_id' => NULL,
+        'icon' => NULL,
+        'color' => NULL,
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_Venue_Contact_Person_Details_On_Site_Contact_OptionValue_2nd',
+    'entity' => 'OptionValue',
+    'cleanup' => 'never',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'Venue_Contact_Person_Details_On_Site_Contact',
+        'label' => '2nd',
+        'value' => '2',
+        'name' => '2nd',
+        'grouping' => NULL,
+        'filter' => 0,
+        'is_default' => FALSE,
+        'description' => NULL,
+        'is_optgroup' => FALSE,
+        'is_reserved' => FALSE,
+        'is_active' => TRUE,
+        'component_id' => NULL,
+        'domain_id' => NULL,
+        'visibility_id' => NULL,
+        'icon' => NULL,
+        'color' => NULL,
+      ],
+    ],
+  ],
+];
