@@ -15,7 +15,7 @@ class Activity {
       return NULL;
     }
 
-    $caseActivity = \Civi\Api4\CaseActivity::get()
+    $caseActivity = \Civi\Api4\CaseActivity::get(FALSE)
       ->addSelect('case_id')
       ->addWhere('activity_id', '=', $activityId)
       ->setLimit(1)

@@ -18,7 +18,7 @@ class Contact {
       return NULL;
     }
 
-    $contact = \Civi\Api4\Contact::get()
+    $contact = \Civi\Api4\Contact::get(FALSE)
       ->addSelect('contact_sub_type:name')
       ->addWhere('id', '=', $contactId)
       ->execute()

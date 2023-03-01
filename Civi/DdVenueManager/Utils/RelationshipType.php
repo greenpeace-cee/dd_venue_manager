@@ -15,7 +15,7 @@ class RelationshipType {
       return NULL;
     }
 
-    $relationshipType = \Civi\Api4\RelationshipType::get()
+    $relationshipType = \Civi\Api4\RelationshipType::get(FALSE)
       ->addSelect('id')
       ->addWhere('name_a_b', '=', $relationTypeName)
       ->execute()

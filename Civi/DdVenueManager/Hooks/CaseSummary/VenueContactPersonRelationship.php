@@ -52,7 +52,7 @@ class VenueContactPersonRelationship {
 
     $preparedRelationships = [];
 
-    $relationships = \Civi\Api4\Relationship::get()
+    $relationships = \Civi\Api4\Relationship::get(FALSE)
       ->addSelect('id')
       ->addSelect('phone.phone')
       ->addSelect('email.email')

@@ -18,7 +18,7 @@ class CaseUtils {
       return NULL;
     }
 
-    $case = \Civi\Api4\CiviCase::get()
+    $case = \Civi\Api4\CiviCase::get(FALSE)
       ->addSelect('case_type_id:name')
       ->addWhere('id', '=', $caseId)
       ->setLimit(1)

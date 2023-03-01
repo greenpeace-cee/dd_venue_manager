@@ -19,7 +19,7 @@ class AddClientStreetAddress {
       return;
     }
 
-    $addresses = \Civi\Api4\Address::get()
+    $addresses = \Civi\Api4\Address::get(FALSE)
       ->addSelect('*')
       ->addWhere('is_primary', '=', TRUE)
       ->addWhere('contact_id', '=', $caseClientId)
