@@ -2,8 +2,6 @@
 
 require_once 'dd_venue_manager.civix.php';
 // phpcs:disable
-use Civi\DdVenueManager\Utils\CaseUtils;
-use Civi\DdVenueManager\Utils\VenueContactPersonLogic;
 use CRM_DdVenueManager_ExtensionUtil as E;
 // phpcs:enable
 

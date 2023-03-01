@@ -1,6 +1,6 @@
 <?php
 
-use Civi\DdVenueManager\Utils\VenueContactPersonLogic;
+use Civi\DdVenueManager\Utils\RelationshipType;
 
 /**
  * This form uses to extend core Relationship form.
@@ -34,7 +34,7 @@ class CRM_DdVenueManager_Form_VenueContactPersonRelationship extends CRM_Contact
 
     if ($this->getAction() == CRM_Core_Action::ADD || $this->getAction() == CRM_Core_Action::UPDATE) {
       $relationshipTypeIdElement = $this->getElement('relationship_type_id');
-      $venueContactPersonRelationshipTypeId = VenueContactPersonLogic::getVenueContactPersonRelationTypeId();
+      $venueContactPersonRelationshipTypeId = RelationshipType::getVenueContactPersonRelationTypeId();
       $ABValue = $venueContactPersonRelationshipTypeId . '_a_b';
       $BAValue = $venueContactPersonRelationshipTypeId . '_b_a';
 
