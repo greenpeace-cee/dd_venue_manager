@@ -2,7 +2,7 @@
   <tr>
     <td class="dd-venue-manager__case-client-street-address-wrap label">
       <div class="dd-venue-manager__case-client-street-address">
-          {$addressFormatted}
+          {$addressFormatted|nl2br}
       </div>
     </td>
   </tr>
