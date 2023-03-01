@@ -47,11 +47,17 @@ function dd_venue_manager_civicrm_config(&$config): void {
       ->addWhere('name', '=', 'Booking_Details')
       ->execute();
   }
+
+  // register replacement hooks and let them run as early as possible
+  Civi::dispatcher()->addListener(
+    'hook_civicrm_caseSummary',
+    'Civi\DdVenueManager\Hooks\CaseSummary\VenueContactPersonRelationship::run',
+    PHP_INT_MAX - 1
+  );
   _dd_venue_manager_civix_civicrm_config($config);
 }
 
 /**
-<<<<<<< HEAD
 =======
  * Implements hook_civicrm_install().
  *
@@ -310,31 +316,4 @@ function dd_venue_manager_civicrm_navigationMenu(&$params) {
       'icon'       => 'crm-i fa-check-square-o'
     ]);
   }
-}
-
-function dd_venue_manager_civicrm_caseSummary($caseID) {
-  $caseTypeName = CaseUtils::getCaseTypeNameById($caseID);
-  if ($caseTypeName !== 'Venue') {
-    return [];
-  }
-
-  $caseClientId = CaseUtils::getCaseClientId($caseID);
-  if (empty($caseClientId)) {
-    return [];
-  }
-
-  $contactSubType = Civi\DdVenueManager\Utils\Contact::getSubType($caseClientId);
-  if (in_array($contactSubType, ['Venue_Contact_Person', 'Venue'])) {
-    return [];
-  }
-
-  return [
-    'relationships' => [
-      'value' => (CRM_Core_Smarty::singleton())->fetchWith('CRM/DdVenueManager/Chunk/CaseSummaryVenueContactPersonRelationship.tpl', [
-        'relations' => VenueContactPersonLogic::getRelationsData($caseID),
-        'caseId' => $caseID,
-        'caseClientId' => $caseClientId,
-      ]),
-    ],
-  ];
 }
