@@ -54,6 +54,12 @@ function dd_venue_manager_civicrm_config(&$config): void {
     'Civi\DdVenueManager\Hooks\CaseSummary\VenueContactPersonRelationship::run',
     PHP_INT_MAX - 1
   );
+  Civi::dispatcher()->addListener(
+    'hook_civicrm_caseSummary',
+    'Civi\DdVenueManager\Hooks\CaseSummary\AddClientStreetAddress::run',
+    PHP_INT_MAX - 1
+  );
+
   _dd_venue_manager_civix_civicrm_config($config);
 }
 
