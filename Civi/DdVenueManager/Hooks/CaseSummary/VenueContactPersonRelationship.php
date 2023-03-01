@@ -1,10 +1,43 @@
 <?php
 
-namespace Civi\DdVenueManager\Utils;
+namespace Civi\DdVenueManager\Hooks\CaseSummary;
 
-use Civi\API\Exception\UnauthorizedException;
+use Civi\DdVenueManager\Utils\CaseUtils;
+use Civi\DdVenueManager\Utils\Contact;
+use Civi\Core\Event\GenericHookEvent;
+use CRM_Core_Smarty;
 
-class VenueContactPersonLogic {
+class VenueContactPersonRelationship {
+
+  /**
+   * @param GenericHookEvent $event
+   */
+  public static function run(GenericHookEvent $event) {
+    $caseTypeName = CaseUtils::getCaseTypeNameById($event->caseID);
+    if ($caseTypeName !== 'Venue') {
+      return;
+    }
+
+    $caseClientId = CaseUtils::getCaseClientId($event->caseID);
+    if (empty($caseClientId)) {
+      return;
+    }
+
+    $contactSubType = Contact::getSubType($caseClientId);
+    if (in_array($contactSubType, ['Venue_Contact_Person', 'Venue'])) {
+      return;
+    }
+
+    $event->addReturnValues([
+      'relationships' => [
+        'value' => (CRM_Core_Smarty::singleton())->fetchWith('CRM/DdVenueManager/Chunk/Hook/CaseSummaryVenueContactPersonRelationship.tpl', [
+          'relations' => VenueContactPersonRelationship::getRelationsData($event->caseID),
+          'caseId' => $event->caseID,
+          'caseClientId' => $caseClientId,
+        ]),
+      ],
+    ]);
+  }
 
   /**
    * @param $caseId
@@ -49,9 +82,9 @@ class VenueContactPersonLogic {
         'venue_contact_primary' => $relationship['Venue_Contact_Person_Details.Primary'],
         'venue_contact_ddc_disposition' => $relationship['Venue_Contact_Person_Details.DDC_Disposition'],
         'venue_contact_decision_maker' => $relationship['Venue_Contact_Person_Details.Decision_Maker'],
-        'venue_contact_decision_maker_label' => self::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Decision_Maker']),
+        'venue_contact_decision_maker_label' => VenueContactPersonRelationship::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Decision_Maker']),
         'venue_contact_on_site_contact_label' => $relationship['Venue_Contact_Person_Details.On_Site_Contact:label'],
-        'venue_contact_primary_label' => self::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Primary']),
+        'venue_contact_primary_label' => VenueContactPersonRelationship::makeBooleanLabel($relationship['Venue_Contact_Person_Details.Primary']),
         'venue_contact_ddc_disposition_label' => $relationship['Venue_Contact_Person_Details.DDC_Disposition:label'],
       ];
     }
@@ -77,35 +110,6 @@ class VenueContactPersonLogic {
     }
 
     return $value;
-  }
-
-  /**
-   * @param $relationTypeName
-   * @return string|null
-   * @throws UnauthorizedException
-   * @throws \API_Exception
-   */
-  public static function getRelationTypeIdByName($relationTypeName) {
-    if (empty($relationTypeName)) {
-      return NULL;
-    }
-
-    $relationshipType = \Civi\Api4\RelationshipType::get()
-      ->addSelect('id')
-      ->addWhere('name_a_b', '=', $relationTypeName)
-      ->execute()
-      ->first();
-
-    return !empty($relationshipType['id']) ? $relationshipType['id'] : null;
-  }
-
-  /**
-   * @return string|null
-   * @throws UnauthorizedException
-   * @throws \API_Exception
-   */
-  public static function getVenueContactPersonRelationTypeId() {
-    return VenueContactPersonLogic::getRelationTypeIdByName('venue contact person');
   }
 
 }
