@@ -9,6 +9,24 @@ use Civi\DdVenueManager\Utils\RelationshipType;
  */
 class CRM_DdVenueManager_Form_VenueContactPersonRelationship extends CRM_Contact_Form_Relationship {
 
+  public function buildQuickForm() {
+    parent::buildQuickForm();
+    $uFGroup = \Civi\Api4\UFGroup::get(FALSE)
+      ->addSelect('id')
+      ->addWhere('name', '=', 'Venue_Contact_Person')
+      ->execute()
+      ->first();
+    $this->getElement('related_contact_id')->setAttribute('data-create-links', json_encode([
+      [
+        'url' => CRM_Utils_System::url('civicrm/profile/create', [
+          'gid' => $uFGroup['id'],
+          'reset' => 1
+        ]),
+        'label' => 'New Venue Contact Person',
+      ]
+    ]));
+  }
+
   public function preProcess() {
     // huck to fix errors when parent form call the methods:
     // $this->get('contactId') and $this->get('id')
