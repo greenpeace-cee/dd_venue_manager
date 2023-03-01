@@ -3,15 +3,15 @@ use CRM_DdVenueManager_ExtensionUtil as E;
 
 return [
   [
-    'name' => 'OptionGroup_Booking_Details_Topic',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign',
     'entity' => 'OptionGroup',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'name' => 'Booking_Details_Topic',
-        'title' => 'Booking Details :: Topic',
+        'name' => 'Booking_Details_Engagement_Campaign',
+        'title' => 'Booking Details :: Engagement Campaign',
         'description' => NULL,
         'data_type' => 'Int',
         'is_reserved' => FALSE,
@@ -26,14 +26,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Energie',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Energie',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Energie',
         'value' => '1',
         'name' => 'Energie',
@@ -53,14 +53,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Okokonsum',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Okokonsum',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Ökokonsum',
         'value' => '2',
         'name' => 'Ökokonsum',
@@ -80,14 +80,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Landwirtschaft',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Landwirtschaft',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Landwirtschaft',
         'value' => '3',
         'name' => 'Landwirtschaft',
@@ -107,14 +107,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Meeresschutz',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Meeresschutz',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Meeresschutz',
         'value' => '4',
         'name' => 'Meeresschutz',
@@ -134,14 +134,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Umweltgifte',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Umweltgifte',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Umweltgifte',
         'value' => '5',
         'name' => 'Umweltgifte',
@@ -161,14 +161,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Walder',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Walder',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Wälder',
         'value' => '6',
         'name' => 'Wälder',
@@ -188,14 +188,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Demokratie',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Demokratie',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Demokratie',
         'value' => '7',
         'name' => 'Demokratie',
@@ -215,14 +215,14 @@ return [
     ],
   ],
   [
-    'name' => 'OptionGroup_Booking_Details_Topic_OptionValue_Biodiversitat',
+    'name' => 'OptionGroup_Booking_Details_Engagement_Campaign_OptionValue_Biodiversitat',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
     'update' => 'always',
     'params' => [
       'version' => 4,
       'values' => [
-        'option_group_id.name' => 'Booking_Details_Topic',
+        'option_group_id.name' => 'Booking_Details_Engagement_Campaign',
         'label' => 'Biodiversität',
         'value' => '8',
         'name' => 'Biodiversität',

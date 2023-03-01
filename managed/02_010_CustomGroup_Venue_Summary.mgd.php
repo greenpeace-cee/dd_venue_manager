@@ -12,6 +12,7 @@ return [
       'values' => [
         'name' => 'Venue_Summary',
         'title' => 'Venue Summary',
+        'table_name' => 'civicrm_value_venue_summary',
         'extends' => 'Organization',
         'extends_entity_column_id' => NULL,
         'extends_entity_column_value' => [

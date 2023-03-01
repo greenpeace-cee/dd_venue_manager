@@ -12,6 +12,7 @@ return [
       'values' => [
         'name' => 'Venue_Contact_Person_Details',
         'title' => 'Venue Contact Person Details',
+        'table_name' => 'civicrm_value_venue_contact_person',
         'extends' => 'Relationship',
         'extends_entity_column_id' => NULL,
         // TODO: limit to venue contact person relationship type

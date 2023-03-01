@@ -60,8 +60,8 @@ function dd_venue_manager_civicrm_config(&$config): void {
 function dd_venue_manager_civicrm_install(): void {
   \Civi\Api4\CaseType::save(FALSE)
     ->addRecord([
-      'name' => 'Cooperation',
-      'title' => 'Cooperation',
+      'name' => 'Venue',
+      'title' => 'Venue',
       'definition' => [
         'restrictActivityAsgmtToCmsUser' => 0,
         'activityAsgmtGrps' => [],
@@ -314,7 +314,7 @@ function dd_venue_manager_civicrm_navigationMenu(&$params) {
 
 function dd_venue_manager_civicrm_caseSummary($caseID) {
   $caseTypeName = CaseUtils::getCaseTypeNameById($caseID);
-  if ($caseTypeName !== 'Cooperation') {
+  if ($caseTypeName !== 'Venue') {
     return [];
   }
 
