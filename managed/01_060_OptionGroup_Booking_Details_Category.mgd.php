@@ -88,9 +88,9 @@ return [
       'version' => 4,
       'values' => [
         'option_group_id.name' => 'Booking_Details_Category',
-        'label' => 'Outdoor with roof',
+        'label' => 'Outdoor überdacht',
         'value' => '3',
-        'name' => 'Outdoor_with_roof',
+        'name' => 'Outdoor_Uberdacht',
         'grouping' => NULL,
         'filter' => 0,
         'is_default' => FALSE,

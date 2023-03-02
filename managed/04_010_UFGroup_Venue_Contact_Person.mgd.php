@@ -38,7 +38,19 @@ return [
         'add_cancel_button' => TRUE,
       ],
       'chain' => [
-        'UFJoin' => ['UFJoin', 'create', ['values' => ['uf_group_id' => '$id', 'module' => 'Profile']]],
+        'UFJoin' => [
+          'UFJoin',
+          'save',
+          [
+            'records' => [
+              ['uf_group_id' => '$id', 'module' => 'Profile'],
+            ],
+            'match' => [
+              'module',
+              'uf_group_id',
+            ],
+          ]
+        ],
       ],
     ],
   ],
