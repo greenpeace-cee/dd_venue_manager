@@ -4,7 +4,7 @@ return [
     'name' => 'ContactLayout_Venue_Contact_Person',
     'entity' => 'ContactLayout',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [

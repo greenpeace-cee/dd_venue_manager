@@ -4,7 +4,7 @@ return [
     'name' => 'SavedSearch_Venue_Manager',
     'entity' => 'SavedSearch',
     'cleanup' => 'never',
-    'update' => 'never',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -27,8 +27,8 @@ return [
               'relationship_type_id',
               'IN',
               [
-                '22',
-                '23',
+                '19',
+                '20',
               ],
             ],
           ],
@@ -65,7 +65,7 @@ return [
     'name' => 'SavedSearch_Venue_Manager_SearchDisplay_Venue_Manager_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'never',
-    'update' => 'never',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [

@@ -1,12 +1,10 @@
 <?php
-use CRM_DdVenueManager_ExtensionUtil as E;
-
 return [
   [
     'name' => 'SavedSearch_Venue_Search',
     'entity' => 'SavedSearch',
     'cleanup' => 'never',
-    'update' => 'never',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -137,7 +135,7 @@ return [
     'name' => 'SavedSearch_Venue_Search_SearchDisplay_Venue_Search_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'never',
-    'update' => 'never',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [

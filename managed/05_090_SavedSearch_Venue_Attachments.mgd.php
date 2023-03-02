@@ -1,12 +1,10 @@
 <?php
-use CRM_DdVenueManager_ExtensionUtil as E;
-
 return [
   [
     'name' => 'SavedSearch_Venue_Attachments',
     'entity' => 'SavedSearch',
     'cleanup' => 'never',
-    'update' => 'never',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -27,6 +25,7 @@ return [
             'Archived:label',
             'Custom_Venue_Attachment_Contact_entity_id_01.id',
             'result_row_num',
+            'Note',
           ],
           'orderBy' => [],
           'where' => [],
@@ -52,8 +51,8 @@ return [
   [
     'name' => 'SavedSearch_Venue_Attachments_SearchDisplay_Venue_Attachments_Table_1',
     'entity' => 'SearchDisplay',
-    'cleanup' => 'never',
-    'update' => 'never',
+    'cleanup' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -144,6 +143,13 @@ return [
                   ],
                 ],
               ],
+            ],
+            [
+              'type' => 'field',
+              'key' => 'Note',
+              'dataType' => 'Text',
+              'label' => 'Note',
+              'sortable' => TRUE,
             ],
             [
               'size' => 'btn-sm',

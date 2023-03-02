@@ -4,7 +4,7 @@ return [
     'name' => 'ContactLayout_Venue',
     'entity' => 'ContactLayout',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -46,10 +46,6 @@ return [
               [
                 'name' => 'core.Basic',
                 'title' => 'ID, Type, Tags',
-              ],
-              [
-                'name' => 'afform_search.afsearchCooperation',
-                'title' => 'Cooperation',
               ],
               [
                 'name' => 'core.Email',
