@@ -162,7 +162,7 @@ return [
                   'icon' => 'fa-pencil',
                   'text' => 'Edit',
                   'style' => 'primary',
-                  'path' => 'civicrm/contact/view/cd/edit?reset=1&type=Organization&groupID=17&entityID=[entity_id]&cgcount=[result_row_num]&multiRecordDisplay=single&mode=edit',
+                  'path' => 'civicrm/contact/view/cd/edit?reset=1&type=Organization&groupID=18&entityID=[entity_id]&cgcount=[result_row_num]&multiRecordDisplay=single&mode=edit',
                   'condition' => [],
                 ],
               ],
