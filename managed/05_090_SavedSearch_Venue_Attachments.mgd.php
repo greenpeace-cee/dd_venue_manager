@@ -49,14 +49,14 @@ return [
     ],
   ],
   [
-    'name' => 'SavedSearch_Venue_Attachments_SearchDisplay_Venue_Attachments_Table_1',
+    'name' => 'SavedSearch_Venue_Attachments_SearchDisplay_Venue_Attachments_Table',
     'entity' => 'SearchDisplay',
     'cleanup' => 'always',
     'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
-        'name' => 'Venue_Attachments_Table_1',
+        'name' => 'Venue_Attachments_Table',
         'label' => 'Venue Attachments Table',
         'saved_search_id.name' => 'Venue_Attachments',
         'type' => 'table',
