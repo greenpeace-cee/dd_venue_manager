@@ -46,6 +46,23 @@ function dd_venue_manager_civicrm_config(&$config): void {
       ->execute();
   }
 
+  $activityStatusCompletedIsDefault = \Civi\Api4\OptionValue::get(FALSE)
+    ->selectRowCount()
+    ->addWhere('option_group_id:name', '=', 'activity_status')
+    ->addWhere('name', '=', 'Completed')
+    ->addWhere('is_default', '=', TRUE)
+    ->execute()
+    ->count();
+  if (!$activityStatusCompletedIsDefault) {
+    // something keeps resetting is_default=1 for activity status completed
+    // just fix it every time ...
+    \Civi\Api4\OptionValue::update(FALSE)
+      ->addValue('is_default', TRUE)
+      ->addWhere('option_group_id:name', '=', 'activity_status')
+      ->addWhere('name', '=', 'Completed')
+      ->execute();
+  }
+
   // register replacement hooks and let them run as early as possible
   Civi::dispatcher()->addListener(
     'hook_civicrm_caseSummary',
