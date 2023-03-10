@@ -4,7 +4,7 @@ return [
     'name' => 'OptionGroup_activity_status_OptionValue_Scheduled',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -35,7 +35,7 @@ return [
     'name' => 'OptionGroup_activity_status_OptionValue_Completed',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
@@ -66,7 +66,7 @@ return [
     'name' => 'OptionGroup_activity_status_OptionValue_Cancelled',
     'entity' => 'OptionValue',
     'cleanup' => 'never',
-    'update' => 'always',
+    'update' => 'unmodified',
     'params' => [
       'version' => 4,
       'values' => [
