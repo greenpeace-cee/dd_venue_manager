@@ -26,6 +26,7 @@ return [
             'Custom_Venue_Attachment_Contact_entity_id_01.id',
             'result_row_num',
             'Note',
+            'Upload_Date',
           ],
           'orderBy' => [],
           'where' => [],
@@ -51,7 +52,7 @@ return [
   [
     'name' => 'SavedSearch_Venue_Attachments_SearchDisplay_Venue_Attachments_Table',
     'entity' => 'SearchDisplay',
-    'cleanup' => 'always',
+    'cleanup' => 'never',
     'update' => 'unmodified',
     'params' => [
       'version' => 4,
@@ -143,6 +144,13 @@ return [
                   ],
                 ],
               ],
+            ],
+            [
+              'type' => 'field',
+              'key' => 'Upload_Date',
+              'dataType' => 'Timestamp',
+              'label' => 'Upload Date',
+              'sortable' => TRUE,
             ],
             [
               'type' => 'field',
