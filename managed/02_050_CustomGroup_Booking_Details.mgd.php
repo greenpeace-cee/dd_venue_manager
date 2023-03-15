@@ -44,7 +44,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Category',
-        'label' => 'Category',
+        'label' => 'Kategorie',
         'data_type' => 'Int',
         'html_type' => 'Radio',
         'default_value' => NULL,
@@ -84,7 +84,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Working_Days',
-        'label' => 'Working Days',
+        'label' => 'Einsatztage',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => NULL,
@@ -124,7 +124,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Working_Times',
-        'label' => 'Working Times',
+        'label' => 'Standzeiten',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => '10:30 - 16:30',
@@ -164,7 +164,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Setup_Times',
-        'label' => 'Setup Times',
+        'label' => 'Auf- und Abbauzeiten',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => NULL,
@@ -204,7 +204,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Registration_on_Site',
-        'label' => 'Registration on Site',
+        'label' => 'Anmeldung vor Ort',
         'data_type' => 'Memo',
         'html_type' => 'TextArea',
         'default_value' => '1. Ansprechpartner',
@@ -244,7 +244,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Site_Details',
-        'label' => 'Site Details',
+        'label' => 'Standplatzinfo',
         'data_type' => 'Memo',
         'html_type' => 'TextArea',
         'default_value' => NULL,
@@ -284,7 +284,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Topic',
-        'label' => 'Topic',
+        'label' => 'Dialog-Thema',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => NULL,
@@ -404,7 +404,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Round_Desk',
-        'label' => 'Round Desk',
+        'label' => 'Rundpult',
         'data_type' => 'Boolean',
         'html_type' => 'Radio',
         'default_value' => NULL,
@@ -484,7 +484,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'VR_Glasses',
-        'label' => 'VR Glasses',
+        'label' => 'VR',
         'data_type' => 'Boolean',
         'html_type' => 'Radio',
         'default_value' => NULL,
@@ -524,7 +524,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Storage_Available',
-        'label' => 'Storage Available',
+        'label' => 'Lager',
         'data_type' => 'Boolean',
         'html_type' => 'Radio',
         'default_value' => NULL,
@@ -564,7 +564,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Other_Equipment',
-        'label' => 'Other Equipment',
+        'label' => 'sonst. Equipment',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => NULL,
