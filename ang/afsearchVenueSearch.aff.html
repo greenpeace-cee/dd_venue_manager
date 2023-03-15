@@ -2,10 +2,10 @@
   <div class="af-container af-layout-inline">
     <af-field name="Venue_Summary.Venue_Type" defn="{input_attrs: {multiple: true}, label: 'Venue Type'}" />
     <af-field name="display_name" defn="{label: 'Venue', input_attrs: {}}" />
-    <af-field name="Contact_Phone_contact_id_01.phone" />
     <af-field name="Contact_Email_contact_id_01.email" />
     <af-field name="Contact_Address_contact_id_01.street_address" />
     <af-field name="Contact_Address_contact_id_01.city" />
+    <af-field name="Contact_Address_contact_id_01.state_province_id" defn="{input_attrs: {multiple: true}}" />
     <af-field name="Contact_CaseContact_Case_01.status_id" defn="{input_attrs: {multiple: true}, required: false, afform_default: ['1', '4', '6', '7', '8', '9']}" />
     <af-field name="MAX_Contact_CaseContact_Case_01_Case_CaseActivity_Activity_01_activity_date_time" defn="{input_type: 'Select', search_range: true, input_attrs: {}, label: 'Last Contacted'}" />
   </div>
