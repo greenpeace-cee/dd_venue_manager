@@ -48,9 +48,9 @@ class AfformLoader {
 
     return "
       <crm-angular-js modules='{$this->afform['module_name']}'>
-        <form id='bootstrap-theme' class='{$this->afform['module_name']}'>
+        <div id='bootstrap-theme' class='{$this->afform['module_name']}'>
           <{$this->afform['directive_name']} options='{$encodedVariables}'></{$this->afform['directive_name']}>
-        </form>
+        </div>
       </crm-angular-js>
     ";
   }
