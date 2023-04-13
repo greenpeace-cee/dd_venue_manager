@@ -136,7 +136,7 @@ function dd_venue_manager_civicrm_install(): void {
             'name' => 'Coop Agreement',
           ],
           [
-            'name' => 'Mail',
+            'name' => 'Mailing',
           ],
           [
             'name' => 'Summary',
