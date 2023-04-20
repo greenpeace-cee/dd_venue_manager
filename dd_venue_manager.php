@@ -302,44 +302,8 @@ function dd_venue_manager_civicrm_navigationMenu(&$params) {
   if (CRM_Core_Permission::check('manage venue')) {
     if (!CRM_Core_Permission::check('administer CiviCRM')) {
       $params = array_filter($params, function($item) {
-        return in_array($item['attributes']['name'], ['Home', 'Search', 'recent_items']);
+        return in_array($item['attributes']['name'], ['Home', 'Venues', 'Search', 'recent_items']);
       });
     }
-    _dd_venue_manager_civix_insert_navigation_menu($params, NULL, [
-      'label'      => E::ts('Venues'),
-      'name'       => 'Venues',
-      'url'        => null,
-      'permission' => 'manage venue',
-      'icon'       => 'crm-i fa-building-o',
-      'weight'     => 10,
-    ]);
-    _dd_venue_manager_civix_insert_navigation_menu($params, 'Venues', [
-      'label'      => E::ts('Search Venues'),
-      'name'       => 'Search Venues',
-      'url'        => 'civicrm/venue-search',
-      'permission' => 'manage venue',
-      'icon'       => 'crm-i fa-search'
-    ]);
-    _dd_venue_manager_civix_insert_navigation_menu($params, 'Venues', [
-      'label'      => E::ts('New Venue'),
-      'name'       => 'New Venue',
-      'url'        => 'civicrm/contact/add?ct=Organization&cst=Venue&reset=1',
-      'permission' => 'manage venue',
-      'icon'       => 'crm-i fa-plus-square-o'
-    ]);
-    _dd_venue_manager_civix_insert_navigation_menu($params, 'Venues', [
-      'label'      => E::ts('New Venue Contact Person'),
-      'name'       => 'New Venue Contact Person',
-      'url'        => 'civicrm/contact/add?ct=Individual&cst=Venue_Contact_Person&reset=1',
-      'permission' => 'manage venue',
-      'icon'       => 'crm-i fa-user-plus'
-    ]);
-    _dd_venue_manager_civix_insert_navigation_menu($params, 'Venues', [
-      'label'      => E::ts('ToDo'),
-      'name'       => 'ToDo',
-      'url'        => 'civicrm/venue-todo',
-      'permission' => 'manage venue',
-      'icon'       => 'crm-i fa-check-square-o'
-    ]);
   }
 }
