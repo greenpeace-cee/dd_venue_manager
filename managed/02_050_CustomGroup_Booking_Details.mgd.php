@@ -127,7 +127,7 @@ return [
         'label' => 'Standzeiten',
         'data_type' => 'String',
         'html_type' => 'Text',
-        'default_value' => '10:30 - 16:30',
+        'default_value' => '',
         'is_required' => TRUE,
         'is_searchable' => FALSE,
         'is_search_range' => FALSE,
