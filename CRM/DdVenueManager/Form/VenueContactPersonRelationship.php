@@ -11,20 +11,22 @@ class CRM_DdVenueManager_Form_VenueContactPersonRelationship extends CRM_Contact
 
   public function buildQuickForm() {
     parent::buildQuickForm();
-    $uFGroup = \Civi\Api4\UFGroup::get(FALSE)
-      ->addSelect('id')
-      ->addWhere('name', '=', 'Venue_Contact_Person')
-      ->execute()
-      ->first();
-    $this->getElement('related_contact_id')->setAttribute('data-create-links', json_encode([
-      [
-        'url' => CRM_Utils_System::url('civicrm/profile/create', [
-          'gid' => $uFGroup['id'],
-          'reset' => 1
-        ]),
-        'label' => 'New Venue Contact Person',
-      ]
-    ]));
+    if ($this->getAction() != CRM_Core_Action::DELETE) {
+      $uFGroup = \Civi\Api4\UFGroup::get(FALSE)
+        ->addSelect('id')
+        ->addWhere('name', '=', 'Venue_Contact_Person')
+        ->execute()
+        ->first();
+      $this->getElement('related_contact_id')->setAttribute('data-create-links', json_encode([
+        [
+          'url' => CRM_Utils_System::url('civicrm/profile/create', [
+            'gid' => $uFGroup['id'],
+            'reset' => 1
+          ]),
+          'label' => 'New Venue Contact Person',
+        ]
+      ]));
+    }
   }
 
   public function preProcess() {
