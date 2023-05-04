@@ -54,6 +54,7 @@ class VenueContactPersonRelationship {
 
     $relationships = \Civi\Api4\Relationship::get(FALSE)
       ->addSelect('id')
+      ->addSelect('is_active')
       ->addSelect('phone.phone')
       ->addSelect('email.email')
       ->addSelect('contact.display_name')
@@ -74,6 +75,7 @@ class VenueContactPersonRelationship {
     foreach ($relationships as $relationship) {
       $preparedRelationships[] = [
         'relationship_id' => $relationship['id'],
+        'is_active' => $relationship['is_active'],
         'contact_display_name' => $relationship['contact.display_name'],
         'contact_id' => $relationship['contact.id'],
         'contact_primary_phone' => $relationship['phone.phone'],

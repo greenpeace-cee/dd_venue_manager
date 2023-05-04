@@ -27,7 +27,7 @@
               <th>Actions</th>
             </tr>
               {foreach from=$relations item=relation}
-                <tr>
+                <tr class="{if !$relation.is_active}cancelled{/if}">
                   <td>
                     <a href="{crmURL p='civicrm/contact/view' q="reset=1&cid=`$relation.contact_id`"}"  target="_blank">{$relation.contact_display_name}</a>
                   </td>
