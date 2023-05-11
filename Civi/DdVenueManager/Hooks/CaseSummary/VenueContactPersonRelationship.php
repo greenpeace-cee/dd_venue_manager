@@ -70,6 +70,7 @@ class VenueContactPersonRelationship {
       ->addJoin('Contact AS contact', 'INNER', ['contact_id_a', '=', 'contact.id'])
       ->addJoin('Email AS email', 'LEFT', ['contact_id_a', '=', 'email.contact_id'], ['email.is_primary', '=', 1])
       ->addJoin('Phone AS phone', 'LEFT', ['contact_id_a', '=', 'phone.contact_id'], ['phone.is_primary', '=', 1])
+      ->addOrderBy('is_active', 'DESC')
       ->execute();
 
     foreach ($relationships as $relationship) {
