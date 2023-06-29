@@ -564,7 +564,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Booking_Details',
         'name' => 'Other_Equipment',
-        'label' => 'sonst. Equipment',
+        'label' => 'Lagerinfo / sonst. Equip.',
         'data_type' => 'String',
         'html_type' => 'Text',
         'default_value' => NULL,
