@@ -124,7 +124,7 @@ return [
       'values' => [
         'custom_group_id.name' => 'Venue_Summary',
         'name' => 'Venue_Overview',
-        'label' => 'Venue Overview',
+        'label' => 'Standplatz/Lager',
         'data_type' => 'Memo',
         'html_type' => 'TextArea',
         'default_value' => NULL,
