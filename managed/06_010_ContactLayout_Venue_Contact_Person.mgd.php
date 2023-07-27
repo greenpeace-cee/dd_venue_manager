@@ -19,20 +19,18 @@ return [
           [
             [
               [
-                'name' => 'core.Email',
-                'title' => 'Email',
+                'name' => 'custom.Individual_Details',
+                'title' => 'Individual Details',
+                'collapsible' => TRUE,
+                'collapsed' => FALSE,
               ],
               [
                 'name' => 'core.Website',
                 'title' => 'Website',
               ],
               [
-                'name' => 'core.Address',
-                'title' => 'Address',
-              ],
-              [
-                'name' => 'core.CommunicationPreferences',
-                'title' => 'Communication Preferences',
+                'name' => 'core.Demographics',
+                'title' => 'Demographics',
               ],
             ],
             [
@@ -41,16 +39,12 @@ return [
                 'title' => 'ID, Type, Tags',
               ],
               [
+                'name' => 'core.Email',
+                'title' => 'Email',
+              ],
+              [
                 'name' => 'core.Phone',
                 'title' => 'Phone',
-              ],
-              [
-                'name' => 'core.IM',
-                'title' => 'Instant Messenger',
-              ],
-              [
-                'name' => 'core.Demographics',
-                'title' => 'Demographics',
               ],
             ],
           ],
