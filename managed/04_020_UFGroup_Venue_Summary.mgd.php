@@ -158,7 +158,7 @@ return [
         'location_type_id' => NULL,
         'phone_type_id' => NULL,
         'website_type_id' => NULL,
-        'label' => 'Venue Overview',
+        'label' => 'Standplatz/Lager',
         'field_type' => 'Venue',
         'is_reserved' => FALSE,
         'is_multi_summary' => FALSE,
