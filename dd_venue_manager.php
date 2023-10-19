@@ -307,3 +307,16 @@ function dd_venue_manager_civicrm_navigationMenu(&$params) {
     }
   }
 }
+
+function dd_venue_manager_civicrm_buildForm($formName, &$form) {
+  if ($formName === 'CRM_Case_Form_ActivityToCase') {
+    if (CRM_Utils_Request::retrieve('fileOnCaseAction', 'String') == 'copy') {
+      $selectCase = $form->getElement('file_on_case_unclosed_case_id');
+      $apiParams = $selectCase->getAttribute('data-api-params');
+      $apiParams = json_decode($apiParams, TRUE);
+      unset($apiParams['params']['case_id']);
+      $selectCase->setAttribute('data-api-params', json_encode($apiParams));
+    }
+  }
+}
+
