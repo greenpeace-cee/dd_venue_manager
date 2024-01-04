@@ -31,8 +31,32 @@
                   <td>
                     <a href="{crmURL p='civicrm/contact/view' q="reset=1&cid=`$relation.contact_id`"}"  target="_blank">{$relation.contact_display_name}</a>
                   </td>
-                  <td>{$relation.contact_primary_phone}</td>
-                  <td>{$relation.contact_primary_email}</td>
+                  <td>
+                    <div class="dd-venue-manager__venue-relations-phones">
+                        {foreach from=$relation.contact_phones item=phone}
+                          <div class="dd-venue-manager__venue-relations-phone">
+                            <span class="dd-venue-manager__venue-relations-bold" title="Phone">{$phone.phone}</span>
+                            {if $phone.isPrimary}
+                              <span title="The phone is primary">*</span>
+                            {/if}
+                            <span title="Phone type">({$phone.locationTypeLabel})</span>
+                          </div>
+                        {/foreach}
+                    </div>
+                  </td>
+                  <td>
+                    <div class="dd-venue-manager__venue-relations-emails">
+                        {foreach from=$relation.contact_emails item=email}
+                          <div class="dd-venue-manager__venue-relations-email">
+                            <span  class="dd-venue-manager__venue-relations-bold" title="Email">{$email.email}</span>
+                              {if $email.isPrimary}
+                                <span title="The email is primary">*</span>
+                              {/if}
+                            <span title="Email type">({$phone.locationTypeLabel})</span>
+                          </div>
+                        {/foreach}
+                    </div>
+                  </td>
                   <td>{$relation.venue_contact_primary_label}</td>
                   <td>{$relation.venue_contact_position}</td>
                   <td>{$relation.venue_contact_decision_maker_label}</td>
@@ -73,6 +97,24 @@
 
 .dd-venue-manager__venue-relations-add-new {
   padding: 0 0 5px 0 !important;
+}
+
+.crm-container .CRM_Case_Form_CaseView  .dd-venue-manager__venue-relations-table tr td,
+.crm-container .CRM_Case_Form_CaseView  .dd-venue-manager__venue-relations-table tr th {
+  padding-left: 15px !important;
+}
+
+.dd-venue-manager__venue-relations-emails, .dd-venue-manager__venue-relations-phones {
+  padding: 0 0 5px 0;
+}
+
+.dd-venue-manager__venue-relations-email, .dd-venue-manager__venue-relations-phone {
+  display: flex;
+  gap: 5px;
+}
+
+.dd-venue-manager__venue-relations-bold {
+  font-weight: bold;
 }
 
 </style>

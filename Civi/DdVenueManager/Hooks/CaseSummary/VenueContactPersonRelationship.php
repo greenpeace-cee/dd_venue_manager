@@ -55,8 +55,6 @@ class VenueContactPersonRelationship {
     $relationships = \Civi\Api4\Relationship::get(FALSE)
       ->addSelect('id')
       ->addSelect('is_active')
-      ->addSelect('phone.phone')
-      ->addSelect('email.email')
       ->addSelect('contact.display_name')
       ->addSelect('contact.id')
       ->addSelect('Venue_Contact_Person_Details.Position')
@@ -79,8 +77,8 @@ class VenueContactPersonRelationship {
         'is_active' => $relationship['is_active'],
         'contact_display_name' => $relationship['contact.display_name'],
         'contact_id' => $relationship['contact.id'],
-        'contact_primary_phone' => $relationship['phone.phone'],
-        'contact_primary_email' => $relationship['email.email'],
+        'contact_phones' => VenueContactPersonRelationship::getContactPhones($relationship['contact.id']),
+        'contact_emails' => VenueContactPersonRelationship::getContactEmails($relationship['contact.id']),
         'venue_contact_position' => $relationship['Venue_Contact_Person_Details.Position'],
         'venue_contact_primary' => $relationship['Venue_Contact_Person_Details.Primary'],
         'venue_contact_ddc_disposition' => $relationship['Venue_Contact_Person_Details.DDC_Disposition'],
@@ -113,6 +111,58 @@ class VenueContactPersonRelationship {
     }
 
     return $value;
+  }
+
+  /**
+   * @param $contactId
+   * @return array
+   */
+  public static function getContactPhones($contactId) {
+    if (empty($contactId)) {
+      return [];
+    }
+
+    $preparedPhones = [];
+    $phones = \Civi\Api4\Phone::get()
+      ->addSelect('location_type_id:label', 'phone', 'is_primary')
+      ->addWhere('contact_id', '=', $contactId)
+      ->execute();
+
+    foreach ($phones as $phone) {
+      $preparedPhones[] = [
+        'locationTypeLabel' => $phone['location_type_id:label'],
+        'phone' => $phone['phone'],
+        'isPrimary' => $phone['is_primary'],
+      ];
+    }
+
+    return $preparedPhones;
+  }
+
+  /**
+   * @param $contactId
+   * @return array
+   */
+  public static function getContactEmails($contactId) {
+    if (empty($contactId)) {
+      return [];
+    }
+
+    $preparedEmails = [];
+    $emails = \Civi\Api4\Email::get()
+      ->addSelect('location_type_id:label', 'email', 'is_primary')
+      ->addWhere('contact_id', '=', $contactId)
+      ->execute();
+
+    foreach ($emails as $email) {
+      $preparedEmails[] = [
+        'locationTypeLabel' => $email['location_type_id:label'],
+        'email' => $email['email'],
+        'isPrimary' => $email['is_primary'],
+      ];
+    }
+
+    return $preparedEmails;
   }
 
 }
