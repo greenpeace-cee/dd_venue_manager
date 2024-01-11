@@ -235,7 +235,7 @@ return [
         'is_active' => TRUE,
         'is_view' => FALSE,
         'is_required' => FALSE,
-        'help_post' => NULL,
+        'help_post' => '<strong>Wichtig:</strong> Die Postadresse der Kontaktperson muss im Anschluss in der Kontaktansicht manuell ergänzt werden!',
         'help_pre' => NULL,
         'visibility' => 'User and User Admin Only',
         'in_selector' => FALSE,

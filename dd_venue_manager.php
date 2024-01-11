@@ -145,10 +145,8 @@ function dd_venue_manager_civicrm_install(): void {
         'statuses' => [
           'Requested',
           'Active',
+          'Passive',
           'Prospect',
-          'Paused',
-          'Rejected',
-          'Inactive',
         ],
         'activitySets' => [
           [
