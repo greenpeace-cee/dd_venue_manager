@@ -39,7 +39,7 @@
                             {if $phone.isPrimary}
                               <span title="The phone is primary">*</span>
                             {/if}
-                            <span title="Phone type">({$phone.locationTypeLabel})</span>
+                            {if count($relation.contact_phones) > 1}<span title="Phone type">({$phone.locationTypeLabel})</span>{/if}
                           </div>
                         {/foreach}
                     </div>
@@ -52,7 +52,7 @@
                               {if $email.isPrimary}
                                 <span title="The email is primary">*</span>
                               {/if}
-                            <span title="Email type">({$phone.locationTypeLabel})</span>
+                            {if count($relation.contact_emails) > 1}<span title="Email type">({$email.locationTypeLabel})</span>{/if}
                           </div>
                         {/foreach}
                     </div>
